@@ -1,0 +1,863 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+    overflow-x: hidden; 
+}
+
+.site_header {
+    width: 100%; /* Занимает 100% ширины экрана */
+    background: rgba(198, 198, 198, 0.25); 
+    height: 112px; /* Высота заголовка */
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    top: 0; /* Прикреплено к верху */
+    z-index: 21; /* Позиция над другими элементами */
+}
+
+
+.glav_contein {
+    width: 100%; /* Занимает 100% ширины главного контейнера */
+    max-width: 1219px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центр по горизонтали */
+    padding-left: 55px; /* Внутренний отступ слева */
+    padding-right: 55px; /* Внутренний отступ справа */
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+
+.button1 button[type="submit1"] {
+    width: 176px; /* Ширина кнопки */
+    height: 39px; /* Высота кнопки */
+    border-radius: 14px; /* Закругление углов */
+    background: #99FFB6; /* Цвет фона */
+    border: none; /* Убираем границу */
+    margin-left: 10px; /* Внешний отступ слева */
+    margin-right: 200px; /* Внешний отступ справа */
+    font-family: Montserrat; /* Шрифт кнопки */
+}
+
+.logo {
+    flex-shrink: 0; /* Запрет уменьшения размера*/
+    padding-right: 20px; /* Внутренний отступ справа */
+    padding-left: 0px; /* Внутренний отступ слева */
+    padding-top: 10px; /* Внутренний отступ сверху */
+    margin-right: -45px; /* Внешний отступ справа */
+}
+
+
+.logo img {
+    width: 72px;
+    height: 75px; 
+}
+
+
+.search-box {
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    width: 265px; 
+    height: 12px; 
+    padding: 10px; /* Внутренний отступ */
+    border-radius: 8px; /* Закругление углов  */
+    border: 1px solid #ccc; /* Граница  */
+    background: #D9D9D9; /* Цвет фона  */
+    margin-top: 0px; /* Внешний отступ сверху */
+}
+
+
+.search-box input[type="text"] {
+    flex: 1; 
+    width: 100% - 30px; /* Устанавливает ширину с учетом внутренних отступов */
+    height: 100%; 
+    border: none; /* Убирает границу  */
+    outline: none; /* Убирает стандартное выделение */
+    background: #D9D9D9; 
+    font-family: Montserrat; 
+}
+
+
+.search-box img {
+    padding-right: 10px; /* Внутренний отступ справа от изображения */
+}
+
+.search-box button[type="submit"] {
+    background-color: #99FFB6; 
+    color: black; 
+    border: none; /* Убирает границу */
+    outline: none; /* Убирает стандартное выделение */
+    padding: 8px 20px; /* Внутренние отступы  */
+    border-radius: 0 4px 4px 0; /* Закругление углов  */
+    cursor: pointer; /* Изменение формы указателя при наведении */
+    margin-left: 30px; /* Внешний отступ слева */
+    font-family: Montserrat; 
+    font-weight: 600; /* Насыщенность шрифта */
+}
+
+.cart-button {
+    display: inline-block; /* Отображается как блочный элемент*/
+    margin-left: auto; /* Выравнивание по правому краю */
+    z-index: 1;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+
+.cart-button img {
+    width: 38px; 
+    height: 30.74px; 
+    vertical-align: middle; /* Выравнивание по центру по вертикали */
+}
+.cart-container {
+    position: relative; /* Добавлено свойство position: relative; */
+}
+
+
+.polz {
+    z-index: 2;
+    padding: 10px 10px; 
+    border: none; 
+    border-radius: 14px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    margin-left: 10px;
+    background-color: #D9D9D9; /* серый цвет по умолчанию */
+    height: 53px; /* изначальная высота кнопки */
+    width: 95px;
+}
+
+.polz.expanded {
+    background-color: #ffffff; /* белый цвет после нажатия */
+    border: #ffffff;
+    border-bottom: solid 200px white;
+    border-top: solid 20px white;
+    border-right: solid 230px white;
+    top: 90px;
+    left: 120px;
+    position: relative;
+    transition: all 0.3s ease; /* Используем all для анимации всех свойств, ease для плавности */
+    margin-left: -110px;
+    z-index: 4;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Начальная прозрачность */
+}
+
+.polz.expanded.active {
+    opacity: 1; /* Прозрачность при активации */
+}
+
+
+.polz.expanded::before {
+    content: ""; /* Создаем пустой элемент для круга */
+    width: 100px; /* Увеличиваем диаметр круга */
+    height: 100px;
+    background-color: #00ff00; /* Зеленый цвет */
+    border-radius: 100%; /* Делаем круг */
+    position: absolute;
+    top: 5px; /* Располагаем круг в верхнем углу блока */
+    left: 50px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Тень для размытия краев */
+    filter: blur(60px); /* Добавляем размытие к краям круга */
+    z-index: -1;  
+}
+
+
+
+.polz-overlay {
+    margin-top: -15px;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.polz-overlay span {
+    margin-bottom: 20px; /* You can adjust this value based on your preference */
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s; /* Добавлен переход для изменения цвета текста */
+}
+
+.polz-overlay span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px; /* Толщина подчеркивания */
+    background-color: #000; /* Цвет подчеркивания */
+    bottom: -5px; /* Расположение подчеркивания внизу текста */
+    left: 0;
+    transition: width 0.3s; /* Добавлен переход для анимации рисовки */
+}
+
+.polz-overlay span:hover {
+    color: #000; /* Цвет текста при наведении */
+}
+
+.polz-overlay span:hover::after {
+    width: 50%; /* Подчеркивание при наведении (100% - полная ширина) */
+}
+
+
+
+.polz.expanded .polz-overlay {
+    display: flex;
+}
+
+.rectangle {
+    position: absolute;
+    width: 383px;
+    height: 546px;
+    background-color: white;
+    border-radius: 54px;
+    top: 0px; /* Изменено значение на top: 100%; */
+    right: 40px; /* Значение остается left: 0; */
+    display: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box;
+    transform-origin: top center;
+    transform: scaleY(0);
+    z-index: 2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+}
+.rectangle.show {
+    display: block;
+    opacity: 1;
+}
+.burger-image {
+    width: 93px;
+    height: 70px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+.burger-name {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.burger-price {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 120px;
+    margin-top: -60px;
+}
+
+.burger-description {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.quantity-controls{
+    margin-top:-100px;
+    margin-left: 250px;
+}
+.quantity-controls button {
+    background-color: #99FFB6; /* Зеленый цвет фона */
+    color: white; /* Белый цвет текста */
+    border: none;
+    border-radius: 9.818px;
+    font-size: 18px;
+    gap: 8.182px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: transform 0.2s ease; /* Добавлен эффект перехода при изменении размера */
+}
+
+/* Увеличение размера кнопок при наведении */
+.quantity-controls button:hover {
+    transform: scale(1.1); /* Увеличение размера на 10% */
+}
+
+.burger-details#burger2{
+    margin-top: 70px;
+}
+
+.doscen p{
+    display: inline;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+}
+
+.doscen{
+    margin-top: 138px;
+    margin-left: 26.91px;
+}
+
+.rectangdost{
+    margin-top: 10px;
+    width: 300px;
+    height: 39px;
+    border-radius: 54px;
+    background: #D9D9D9;
+    margin-left: 26.91px;
+}
+
+.rectdosimg{
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    margin-top: -10px;
+    margin-left: 21px;
+}
+
+.recdostxt{
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 24px */
+    margin-top: -32px;
+    margin-left: 40px;
+}
+
+.oplatatxtrec{
+    margin-top: 138px;
+    margin-left: 222.91px;
+}
+
+.rectoplxt1{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.rectoplxt2{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.rectangoplata{
+    margin-top: -5px;
+    margin-left: 13px;
+    width: 331px;
+    height: 45px;
+    border-radius: 54px;
+    background: #99FFB6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Стилизация количества */
+.quantity {
+    color: var(--Neutral-Black, #09101D);
+    text-align: center;
+
+    /* Paragraph Base / Heavy */
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+.support{
+    margin-top: 96px;
+    margin-left: 180px;
+}
+
+.support p{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.messeg-section{
+    position: relative;
+    margin-top: 42px;
+    margin-left: 787px;
+    width: 659px;
+    height: 817px;
+    flex-shrink: 0; 
+    border-radius: 64px;
+    background: rgba(217, 217, 217, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sendmess {
+    position: absolute;
+    top:55px;
+    left:56px;
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    width: 547px; 
+    height: 36px; 
+    padding: 10px; /* Внутренний отступ */
+    border-radius: 8px; /* Закругление углов  */
+    border: 1px solid #ccc; /* Граница  */
+    background: #D9D9D9; /* Цвет фона  */
+}
+
+
+.sendmess input[type="text"] {
+    flex: 1; 
+    width: 100% - 30px; /* Устанавливает ширину с учетом внутренних отступов */
+    height: 100%; 
+    border: none; /* Убирает границу  */
+    outline: none; /* Убирает стандартное выделение */
+    background: #D9D9D9; 
+    font-family: Montserrat;
+    font-size: 36px; 
+}
+
+
+.sendmess img {
+    padding-right: 10px; /* Внутренний отступ справа от изображения */
+}
+
+.arrow{
+    width: 53px;
+    height: 53px;
+    opacity: 0.5;
+}
+
+.mess1{
+    position: absolute;
+    width: 307px;
+    height: 42px;
+    border-radius: 4px;
+    background: #99FFB6;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    top: 205px;
+    left: 292px;
+}
+
+.mess1 p{
+    margin-top:6px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+}
+
+.mess2{
+    position: absolute;
+    top: 313px;
+    left: 56px;
+    width: 337px;
+    height: 89px;
+    text-align: center;
+    border-radius: 4px;
+    border-color: none;
+    background: #D9D9D9;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.mess2 p{
+    margin-top: 18px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+}
+
+.mess31{
+    position: absolute;
+    top:467px;
+    left: 292px;
+    width: 307px;
+    height: 43px;
+    border-radius: 4px;
+    background: #99FFB6;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mess41{
+    width: 370px;
+    height: 65px;
+    border-radius: 4px;
+    background: #D9D9D9;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top:575px;
+    left:56px;
+}
+
+.mess51{
+   width: 317px;
+   height: 74px;
+   border-radius: 4px;
+   background: #99FFB6;
+   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+   position: relative;
+   top: 615px;
+   left: 292px;
+}
+
+.ques{
+    position: relative;
+    top:-580px;
+    left:185px;
+}
+.ques1{
+    width: 297px;
+    height: 54px;
+    border-radius: 30px;
+    background: #D9D9D9;
+    text-align: center;
+    border: 2px solid transparent; /* Добавляем начальную рамку с прозрачным цветом */
+    transition: border-color 0.3s ease; /* Добавляем анимацию изменения цвета рамки */
+}
+
+.ques1:hover {
+    border-color: #000; /* Устанавливаем цвет рамки при наведении на элемент */
+}
+
+
+
+.ques2{
+    width: 297px;
+    height: 54px;
+    border-radius: 30px;
+    background: #D9D9D9;
+    text-align: center;
+    border: 2px solid transparent; /* Добавляем начальную рамку с прозрачным цветом */
+    transition: border-color 0.3s ease; /* Добавляем анимацию изменения цвета рамки */
+    margin-top: 10px;
+}
+
+.ques2:hover {
+    border-color: #000; /* Устанавливаем цвет рамки при наведении на элемент */
+}
+
+.ques3{
+    margin-left: -45px;
+    width: 388px;
+    height: 54px;
+    border-radius: 30px;
+    background: #D9D9D9;
+    text-align: center;
+    border: 2px solid transparent; /* Добавляем начальную рамку с прозрачным цветом */
+    transition: border-color 0.3s ease; /* Добавляем анимацию изменения цвета рамки */
+    margin-top: 10px;
+}
+
+.ques3:hover {
+    border-color: #000; /* Устанавливаем цвет рамки при наведении на элемент */
+}
+
+.ques4{
+    margin-left: -12px;
+    width: 322px;
+    height: 54px;
+    border-radius: 30px;
+    background: #D9D9D9;
+    text-align: center;
+    border: 2px solid transparent; /* Добавляем начальную рамку с прозрачным цветом */
+    transition: border-color 0.3s ease; /* Добавляем анимацию изменения цвета рамки */
+    margin-top: 10px;
+}
+
+.ques4:hover {
+    border-color: #000; /* Устанавливаем цвет рамки при наведении на элемент */
+}
+
+.ques5{
+    margin-left: -128px;
+    width: 530px;
+    height: 54px;
+    border-radius: 30px;
+    background: #D9D9D9;
+    text-align: center;
+    border: 2px solid transparent; /* Добавляем начальную рамку с прозрачным цветом */
+    transition: border-color 0.3s ease; /* Добавляем анимацию изменения цвета рамки */
+    margin-top: 10px;
+}
+
+.ques5:hover {
+    border-color: #000; /* Устанавливаем цвет рамки при наведении на элемент */
+}
+
+.ques6{
+    margin-left: 10px;
+    width: 272px;
+    height: 54px;
+    border-radius: 30px;
+    background: #D9D9D9;
+    text-align: center;
+    border: 2px solid transparent; /* Добавляем начальную рамку с прозрачным цветом */
+    transition: border-color 0.3s ease; /* Добавляем анимацию изменения цвета рамки */
+    margin-top: 10px;
+}
+
+.ques6:hover {
+    border-color: #000; /* Устанавливаем цвет рамки при наведении на элемент */
+}
+
+.ques1 p{
+    margin-top: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ques2 p{
+    margin-top: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.ques3 p{
+    margin-top: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ques4 p{
+    margin-top: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ques5 p{
+    margin-top: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ques6 p{
+    margin-top: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.mess3 p{
+    padding-top: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        margin-left: 50%; /* Start from the center */
+    }
+    to {
+        width: 100%;
+        margin-left: 0; /* Expand to the right */
+    }
+}
+
+/* Add "typing-animation" class to mess3, mess4, and mess5 */
+.mess3.typing-animation, .mess4.typing-animation, .mess5.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #000;
+    font-family: inherit;
+    font-size: 25px;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-align: center;
+    animation: typing 3s steps(40, end) forwards;
+}
+
+
+.circle {
+    content: ""; /* Создаем пустой элемент для круга */
+    width: 632px; /* Увеличиваем диаметр круга */
+    height: 310px;
+    background: radial-gradient(50% 50% at 50% 50%, #99FFB6 0%, rgba(234, 234, 234, 0.00) 100%); /* Зеленый цвет */
+    border-radius: 100%; /* Делаем круг */
+    position: absolute;
+    top: 105px; /* Располагаем круг в верхнем углу блока */
+    left:-150px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Тень для размытия краев */
+    filter: blur(60px); /* Добавляем размытие к краям круга */
+    z-index: -1;  
+}
+
+.konecsaita-section {
+    background: rgba(217, 217, 217, 0.50);
+    padding: 20px;
+    width: 100%s;
+    height: 451px;
+    margin-top: -300px;
+    
+}
+
+.konecsaita {
+    display: flex;
+    align-items: center;
+    padding-left: 350px;
+    margin-top: 150px;
+
+}
+
+.menu-item {
+    position: relative;
+    width: 253px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    overflow: hidden;
+    display: inline-block; /* Добавлено, чтобы ширина подчеркивания соответствовала ширине текста */
+}
+
+.menu-item::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px; /* Выберите желаемую толщину подчеркивания */
+    background-color: #000; /* Цвет подчеркивания */
+    transition: width 0.3s ease-out;
+}
+
+.menu-item:hover::before {
+    width: 30%;
+}
+
+
+.social-item.h1{
+    width: 320px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.social-item{
+    width: 253px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu-column,
+.social-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item,
+.social-item {
+    margin-bottom: 10px; /* Расстояние между элементами */
+    line-height: 2; /* Увеличенное расстояние между строками текста */
+}
+
+/* Дополнительные стили, если необходимо */
+.menu-column {
+    margin-right: 20px; /* Расстояние между столбцами */
+}
+
+.social-column {
+    text-align: left; /* Выравнивание социальных сетей справа */
+}
+
+.logo,
+.menu-column,
+.social-column {
+    padding-right:100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

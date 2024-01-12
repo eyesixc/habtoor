@@ -1,0 +1,1388 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+}
+.site_header {
+    width: 100%; /* Занимает 100% ширины экрана */
+    background: rgba(198, 198, 198, 0.25); 
+    height: 112px; /* Высота заголовка */
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    position: fixed; /* Фиксированное положение при прокрутке */
+    top: 0; /* Прикреплено к верху */
+    z-index: 21; /* Позиция над другими элементами */
+}
+
+
+.glav_contein {
+    width: 100%; /* Занимает 100% ширины главного контейнера */
+    max-width: 1219px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центр по горизонтали */
+    padding-left: 55px; /* Внутренний отступ слева */
+    padding-right: 55px; /* Внутренний отступ справа */
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+
+.button1 button[type="submit1"] {
+    width: 176px; /* Ширина кнопки */
+    height: 39px; /* Высота кнопки */
+    border-radius: 14px; /* Закругление углов */
+    background: #99FFB6; /* Цвет фона */
+    border: none; /* Убираем границу */
+    margin-left: 10px; /* Внешний отступ слева */
+    margin-right: 200px; /* Внешний отступ справа */
+    font-family: Montserrat; /* Шрифт кнопки */
+}
+
+.logo {
+    flex-shrink: 0; /* Запрет уменьшения размера*/
+    padding-right: 20px; /* Внутренний отступ справа */
+    padding-left: 0px; /* Внутренний отступ слева */
+    padding-top: 10px; /* Внутренний отступ сверху */
+    margin-right: 10px; /* Внешний отступ справа */
+}
+
+
+.logo img {
+    width: 72px;
+    height: 75px; 
+}
+
+
+.search-box {
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    width: 265px; 
+    height: 12px; 
+    padding: 10px; /* Внутренний отступ */
+    border-radius: 8px; /* Закругление углов  */
+    border: 1px solid #ccc; /* Граница  */
+    background: #D9D9D9; /* Цвет фона  */
+    margin-top: 0px; /* Внешний отступ сверху */
+}
+
+
+.search-box input[type="text"] {
+    flex: 1; 
+    width: 100% - 30px; /* Устанавливает ширину с учетом внутренних отступов */
+    height: 100%; 
+    border: none; /* Убирает границу  */
+    outline: none; /* Убирает стандартное выделение */
+    background: #D9D9D9; 
+    font-family: Montserrat; 
+}
+
+
+.search-box img {
+    padding-right: 10px; /* Внутренний отступ справа от изображения */
+}
+
+.search-box button[type="submit"] {
+    background-color: #99FFB6; 
+    color: black; 
+    border: none; /* Убирает границу */
+    outline: none; /* Убирает стандартное выделение */
+    padding: 8px 20px; /* Внутренние отступы  */
+    border-radius: 0 4px 4px 0; /* Закругление углов  */
+    cursor: pointer; /* Изменение формы указателя при наведении */
+    margin-left: 30px; /* Внешний отступ слева */
+    font-family: Montserrat; 
+    font-weight: 600; /* Насыщенность шрифта */
+}
+
+.cart-button {
+    display: inline-block; /* Отображается как блочный элемент*/
+    margin-left: auto; /* Выравнивание по правому краю */
+    z-index: 1;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+
+.cart-button img {
+    width: 38px; 
+    height: 30.74px; 
+    vertical-align: middle; /* Выравнивание по центру по вертикали */
+}
+.cart-container {
+    position: relative; /* Добавлено свойство position: relative; */
+}
+
+
+.polz {
+    z-index: 2;
+    padding: 10px 10px; 
+    border: none; 
+    border-radius: 14px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    margin-left: 10px;
+    background-color: #D9D9D9; /* серый цвет по умолчанию */
+    height: 53px; /* изначальная высота кнопки */
+    width: 95px;
+}
+
+.polz.expanded {
+    background-color: #ffffff; /* белый цвет после нажатия */
+    border: #ffffff;
+    border-bottom: solid 200px white;
+    border-top: solid 20px white;
+    border-right: solid 230px white;
+    top: 90px;
+    left: 120px;
+    position: relative;
+    transition: all 0.3s ease; /* Используем all для анимации всех свойств, ease для плавности */
+    margin-left: -110px;
+    z-index: 4;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Начальная прозрачность */
+}
+
+.polz.expanded.active {
+    opacity: 1; /* Прозрачность при активации */
+}
+
+
+.polz.expanded::before {
+    content: ""; /* Создаем пустой элемент для круга */
+    width: 100px; /* Увеличиваем диаметр круга */
+    height: 100px;
+    background-color: #00ff00; /* Зеленый цвет */
+    border-radius: 100%; /* Делаем круг */
+    position: absolute;
+    top: 5px; /* Располагаем круг в верхнем углу блока */
+    left: 50px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Тень для размытия краев */
+    filter: blur(60px); /* Добавляем размытие к краям круга */
+    z-index: -1;  
+}
+
+
+
+.polz-overlay {
+    margin-top: -15px;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.polz-overlay span {
+    margin-bottom: 20px; /* You can adjust this value based on your preference */
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s; /* Добавлен переход для изменения цвета текста */
+}
+
+.polz-overlay span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px; /* Толщина подчеркивания */
+    background-color: #000; /* Цвет подчеркивания */
+    bottom: -5px; /* Расположение подчеркивания внизу текста */
+    left: 0;
+    transition: width 0.3s; /* Добавлен переход для анимации рисовки */
+}
+
+.polz-overlay span:hover {
+    color: #000; /* Цвет текста при наведении */
+}
+
+.polz-overlay span:hover::after {
+    width: 50%; /* Подчеркивание при наведении (100% - полная ширина) */
+}
+
+
+
+.polz.expanded .polz-overlay {
+    display: flex;
+}
+
+.rectangle {
+    position: absolute;
+    width: 383px;
+    height: 546px;
+    background-color: white;
+    border-radius: 54px;
+    top: 0px; /* Изменено значение на top: 100%; */
+    right: 40px; /* Значение остается left: 0; */
+    display: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box;
+    transform-origin: top center;
+    transform: scaleY(0);
+    z-index: 2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+}
+.rectangle.show {
+    display: block;
+    opacity: 1;
+}
+.burger-image {
+    width: 93px;
+    height: 70px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+.burger-name {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.burger-price {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 120px;
+    margin-top: -60px;
+}
+
+.burger-description {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.quantity-controls{
+    margin-top:-100px;
+    margin-left: 250px;
+}
+.quantity-controls button {
+    background-color: #99FFB6; /* Зеленый цвет фона */
+    color: white; /* Белый цвет текста */
+    border: none;
+    border-radius: 9.818px;
+    font-size: 18px;
+    gap: 8.182px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: transform 0.2s ease; /* Добавлен эффект перехода при изменении размера */
+}
+
+/* Увеличение размера кнопок при наведении */
+.quantity-controls button:hover {
+    transform: scale(1.1); /* Увеличение размера на 10% */
+}
+
+.burger-details#burger2{
+    margin-top: 70px;
+}
+
+.doscen p{
+    display: inline;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+}
+
+.doscen{
+    margin-top: 138px;
+    margin-left: 26.91px;
+}
+
+.rectangdost{
+    margin-top: 10px;
+    width: 300px;
+    height: 39px;
+    border-radius: 54px;
+    background: #D9D9D9;
+    margin-left: 26.91px;
+}
+
+.rectdosimg{
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    margin-top: -10px;
+    margin-left: 21px;
+}
+
+.recdostxt{
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 24px */
+    margin-top: -32px;
+    margin-left: 40px;
+}
+
+.oplatatxtrec{
+    margin-top: 138px;
+    margin-left: 222.91px;
+}
+
+.rectoplxt1{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.rectoplxt2{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.rectangoplata{
+    margin-top: 10px;
+    margin-left: 13px;
+    width: 331px;
+    height: 45px;
+    border-radius: 54px;
+    background: #99FFB6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Стилизация количества */
+.quantity {
+    color: var(--Neutral-Black, #09101D);
+    text-align: center;
+
+    /* Paragraph Base / Heavy */
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Всплывающее окно */
+.popup {
+    display: none;
+    position: fixed;
+    width: 884px;
+    height: 558px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 34px;
+    background: linear-gradient(90deg, #C9FFD8 1.04%, #F1F1F1 24%);
+    box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+
+.popup p {
+    margin-bottom: 10px;
+}
+
+.popup button {
+    cursor: pointer;
+}
+
+.popuprect1{
+    margin-top: 49px;
+    margin-left: 50px;
+    width: 340px;
+    height: 459px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectandress{
+    margin-top: -5px;
+    margin-left: 0px;
+    width: 202px;
+    height: 28px;
+    background: #D9D9D9;
+    border-radius: 50px;
+}
+
+.rectandress p{
+    position: absolute;
+    top:50px;
+    left: 11px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 24px */
+}
+
+.addresrecttxt{
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+}
+
+.adreccrect{
+    position: absolute; 
+    top:63px; 
+    left:94px;
+}
+
+.vasheimyarect{
+    position: absolute; 
+    top:151px; 
+    left:94px;
+}
+
+.vasheimyarect p{
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */ 
+}
+
+.vashnomerrect{
+    position: absolute;
+    top:237px;
+    left:94px;
+}
+
+.vashnomerrect p{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */ 
+}
+
+.commentrrect{
+    position: absolute;
+    top:347px;
+    left:94px;
+}
+
+.commentrrect p{
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */ 
+}
+
+.oformotzakaz{
+    margin-top: -450px;
+    margin-left: 450px;
+    width: 395px;
+    height: 136px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.50);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.predzakazof{
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+}
+
+.dataivrem{
+    color: #000;
+    margin-left: 20px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+}
+
+.oplatarect{
+    margin-top: -0px;
+    margin-left: 450px;
+    width: 391px;
+    height: 139px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.50);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s; /* Добавляем плавный переход цвета */
+}
+
+
+.oplatatxt{
+    padding-top: 5px;
+    margin-left: -250px;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 42px */
+}
+
+.nalichkarect{
+    margin-left: 20px;
+    width: 142px;
+    height: 28px;
+    border-radius: 50px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    transition: background-color 0.3s; /* Добавляем плавный переход цвета */
+}
+
+.nalichkarect:hover {
+    background-color: rgba(0, 0, 0, 0.50); /* Задаем серый цвет при наведении */
+}
+
+.naltxt{
+    margin-top: 0;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+
+.perevodrect{
+    margin-left: 200px;
+    margin-top: -29px;
+    width: 183px;
+    height: 28px;
+    border-radius: 50px;
+    border: 1px solid #D9D9D9;
+    transition: background-color 0.3s; /* Добавляем плавный переход цвета */
+}
+
+.perevodrect:hover {
+    background-color: rgba(0, 0, 0, 0.50); /* Задаем серый цвет при наведении */
+}
+
+.perevodtxt{
+    margin-top: 0;
+    margin-left: 10px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+
+.kartoyrect{
+    margin-left: 70px;
+    margin-top: 11px;
+    width: 232px;
+    height: 28px;
+    border-radius: 50px;
+    border: 1px solid #D9D9D9;
+    transition: background-color 0.3s; /* Добавляем плавный переход цвета */
+}
+
+.kartoyrect:hover {
+    background-color: rgba(0, 0, 0, 0.50); /* Задаем серый цвет при наведении */
+}
+
+.kartoytxt{
+    margin-top: 0;
+    margin-left: 10px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+
+.visarect{
+    margin-left: 450px;
+    margin-top: 44px;
+    width: 235px;
+    height: 46px;
+    border-radius: 50px;
+    background-color:rgba(99, 255, 143, 0.50);
+}
+
+.visarect img{
+    margin-top: -5px;
+    margin-left: 40px;
+    position: relative;
+    top: 18px;
+    left: 10px;
+    width: 45px;
+    height: 15px;
+}
+.visarect p{
+    margin-top: -1px;
+    margin-left: 84px;
+    width: 60px;
+    height: 15px;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 15px */
+}
+
+.oplatatengrect{
+    margin-left: 600px;
+    margin-top: -64px;
+    width: 235px;
+    height: 46px;
+    border-radius: 50px;
+    background-color: #63FF8F;
+    
+}
+
+.oplatatxt{
+    position: relative;
+    top:0px;
+    left: 120px;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+.cenattxt{
+    position: relative;
+    top:-25px;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+}
+
+.crest {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.crest:before, .crest:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #333; /* Цвет крестика */
+    top: 5px;
+    left: 14px;
+}
+
+.crest:before {
+    transform: rotate(45deg);
+}
+
+.crest:after {
+    transform: rotate(-45deg);
+}
+
+.navig{
+    padding-top: 180px;
+    padding-right: 0px;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.figure{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.figure img {
+    padding-right: 20px; /* Adjust the margin to your preference */
+}
+.link {
+    position: relative;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Высота линии подчеркивания */
+    background-color: #000;
+    transform-origin: bottom right; /* Начальная точка анимации от правого нижнего угла */
+    transition: transform 0.3s ease, width 0.3s ease; /* Добавлено свойство transition */
+}
+
+.link:hover::before {
+    width: 70%; /* Конечное значение ширины при наведении */
+    transform-origin: bottom left; /* Конечная точка анимации от левого нижнего угла */
+    transform: scaleX(1); /* Установка ширины на 100% при наведении */
+}
+
+
+
+.dish-section {
+    margin-top: 20px;
+}
+
+.figure1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.dish-item {
+    width: 23%; /* Ширина элемента, чтобы поместить 4 элемента в строчку */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.dish-info {
+    display: flex;
+/* Горизонтальное направление */
+    align-items: flex-start;
+    justify-content: flex-end; /* Выравнивание по левому краю */
+    margin-top: -10px;
+}
+
+.dish-info .ocenka,
+.dish-info .nazvanres,
+.dish-info .gold-star,
+.dish-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom;
+    align-self: flex-start;
+}   
+
+.dish-info .nazvanres{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.dish-info .ocenka,
+.dish-info .gold-star{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dish-info .ocenka{
+color: #000;
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.dish-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom; /* Выравнивание внизу */
+    align-self: flex-end;
+}
+
+.dish-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Для закругленных углов у изображений */
+}
+
+
+.heart-icon {
+    font-size: 30px;
+    color: gray; /* Initial color */
+    padding: 0px;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    display: block; /* Set to block to appear on a new line */
+    margin-top: 5px; /* Adjust the margin as needed */
+}
+
+.heart-icon:hover {
+    color: red; /* Color when hovered */
+}
+
+.gold-star{
+    color: #FFB906;
+    font-size: 24px;
+
+}
+
+.foodcomp {
+    margin-top: 60px;
+}
+
+.foodcomp p{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.foodcomp p::after {
+    content: '';
+    position: absolute;
+    top: 606px;
+    left: -250px;
+    width: 1181px;
+    height: 86.2px;
+    background: rgba(153, 255, 182, 0.50);
+    z-index: -1;
+    border-radius: 34px;
+}
+
+.foodpresent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.food-item {
+    text-align: center;
+    margin: 10px; /* Adjust margins as needed */
+}
+
+.food-item img {
+    width: 542.469px;
+    height: 244.446px;
+}
+
+
+.foodpresent1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -10px;
+}
+
+.item-info .ocenka,
+.item-info .nazvanres,
+.item-info .gold-star,
+.item-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.item-info .nazvanres{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.item-info .ocenka,
+.item-info .gold-star{
+    display: inline-block;
+    vertical-align: text-top;
+    padding-bottom: 10px;
+}
+
+.item-info .ocenka{
+    margin-top: 5px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.item-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom; /* Выравнивание внизу */
+}
+
+.dostavka {
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.dostavka span{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+}
+
+.dostavka p::after {
+    content: '';
+    position: absolute;
+    top: 1495px;
+    left: -250px;
+    width: 1000px;
+    height: 70px;
+    background: rgba(153, 255, 182, 0.50);
+    z-index: -1;
+    border-radius: 34px;
+}
+
+.dostavkatext {
+    display: flex;
+    align-items: center;
+}
+
+.delivery-text {
+    margin-top: 70px; /* Это значение можно изменить в зависимости от вашего предпочтения */
+}
+
+.dostavka-section {
+    margin-top: 20px;
+}
+
+.figure2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.dostavka-item {
+    margin-top: 20px;
+    width: 23%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    height: 197px;
+    transition: border-color 0.3s ease-in-out; /* Add transition for border-color */
+}
+
+.dostavka-item:hover {
+    border-color: #000; /* Change border color on hover */
+}
+
+
+.dostavka-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end; /* Выравнивание по левому краю */
+    margin-top: -10px;
+    
+}
+
+.dostavka-info .ocenka,
+.dostavka-info .nazvanres,
+.dostavka-info .gold-star,
+.dostavka-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom;
+    align-self: flex-start;
+}   
+
+.dostavka-info .nazvanres{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.dostavka-info .ocenka,
+.dostavka-info .gold-star{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dostavka-info .ocenka{
+color: #000;
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.dostavka-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom; /* Выравнивание внизу */
+    align-self: flex-end;
+}
+
+.dostavka-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Для закругленных углов у изображений */
+}
+
+.scidka {
+    margin-top: 10px;
+    margin-right: 100px;
+}
+
+.scidka p{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.scidka p::after {
+    content: '';
+    position: absolute;
+    top: 1865px;
+    left: -250px;
+    width: 864px;
+    height: 56.2px;
+    background: rgba(153, 255, 182, 0.50);
+    z-index: -1;
+    border-radius: 34px;
+}
+
+.scidka-section {
+    margin-top: 10px;
+}
+
+.scidka-item {
+    width: 23%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    height: 197px;
+    transition: border-color 0.3s ease-in-out; /* Add transition for border-color */
+}
+
+.scidka-item:hover {
+    border-color: #000; /* Change border color on hover */
+}
+
+
+.scidka-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end; /* Выравнивание по левому краю */
+    margin-top: -10px;
+    
+}
+
+.scidka-info .ocenka,
+.scidka-info .nazvanres,
+.scidka-info .gold-star,
+.scidka-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom;
+    align-self: flex-start;
+}   
+
+.scidka-info .nazvanres{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.scidka-info .ocenka,
+.scidka-info .gold-star{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.scidka-info .ocenka{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.scidka-info .heart-icon {
+    display: inline-block;
+    vertical-align: bottom; /* Выравнивание внизу */
+    align-self: flex-end;
+}
+
+.scidka-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Для закругленных углов у изображений */
+}
+
+.allrest {
+    margin-top: 150px;
+    margin-right: 100px;
+}
+
+.allrest p{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.allrest-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Расстояние между рядами */
+}
+
+.allrest-item {
+    width: 30%; /* Ширина элемента внутри ряда */
+    text-align: left; /* Выравнивание текста по центру */
+}
+
+.allrest-item img {
+    max-width: 100%; /* Максимальная ширина изображения внутри элемента */
+    height: auto; /* Автоматическое поддержание соотношения сторон */
+}
+
+.allrest-info .ocenka,
+.allrest-info .nazvanres,
+.allrest-info .gold-star{
+    display: inline-block;
+    vertical-align: bottom;
+    align-self: flex-start;
+}   
+
+.allrest-info .nazvanres{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.allrest-info .ocenka,
+.allrest-info .gold-star{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.allrest-info .ocenka{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.konecsaita-section {
+    background: rgba(217, 217, 217, 0.50);
+    padding: 20px;
+    width: 100%s;
+    height: 451px;
+    margin-top: 200px;
+    
+}
+
+.konecsaita {
+    display: flex;
+    align-items: center;
+    padding-left: 350px;
+    margin-top: 150px;
+
+}
+
+.menu-item {
+    position: relative;
+    width: 253px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    overflow: hidden;
+    display: inline-block; /* Добавлено, чтобы ширина подчеркивания соответствовала ширине текста */
+}
+
+.menu-item::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px; /* Выберите желаемую толщину подчеркивания */
+    background-color: #000; /* Цвет подчеркивания */
+    transition: width 0.3s ease-out;
+}
+
+.menu-item:hover::before {
+    width: 30%;
+}
+
+
+.social-item.h1{
+    width: 320px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.social-item{
+    width: 253px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu-column,
+.social-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item,
+.social-item {
+    margin-bottom: 10px; /* Расстояние между элементами */
+    line-height: 2; /* Увеличенное расстояние между строками текста */
+}
+
+/* Дополнительные стили, если необходимо */
+.menu-column {
+    margin-right: 20px; /* Расстояние между столбцами */
+}
+
+.social-column {
+    text-align: left; /* Выравнивание социальных сетей справа */
+}
+
+.logo,
+.menu-column,
+.social-column {
+    padding-right:100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,303 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+    overflow-x: hidden; 
+}
+
+img.background {
+    width: 1720px;
+    height: auto;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    z-index: -2;
+    opacity: 0.5;
+  
+    /* Зависит от размера изображения */
+    @media screen and (max-width: 640px){
+      img.bg {
+        left: 50%;
+        margin-left: -320px;
+      }
+    }
+  }
+.site_header {
+    width: 100%; /* Занимает 100% ширины экрана */
+    background-color: rgba(198, 198, 198, 0.25); 
+    height: 112px; /* Высота заголовка */
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    position: fixed; /* Фиксированное положение при прокрутке */
+    top: 0; /* Прикреплено к верху */
+    z-index: 21; /* Позиция над другими элементами */
+}
+
+
+.glav_contein {
+    width: 100%; /* Занимает 100% ширины главного контейнера */
+    max-width: 1219px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центр по горизонтали */
+    padding-left: 55px; /* Внутренний отступ слева */
+    padding-right: 55px; /* Внутренний отступ справа */
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+
+.button1 button[type="submit1"] {
+    width: 176px; /* Ширина кнопки */
+    height: 39px; /* Высота кнопки */
+    border-radius: 14px; /* Закругление углов */
+    background: #99FFB6; /* Цвет фона */
+    border: none; /* Убираем границу */
+    margin-left: 10px; /* Внешний отступ слева */
+    margin-right: 200px; /* Внешний отступ справа */
+    font-family: Montserrat; /* Шрифт кнопки */
+}
+
+.logo {
+    flex-shrink: 0; /* Запрет уменьшения размера*/
+    padding-right: 20px; /* Внутренний отступ справа */
+    padding-left: 0px; /* Внутренний отступ слева */
+    padding-top: 10px; /* Внутренний отступ сверху */
+    margin-right: -45px; /* Внешний отступ справа */
+}
+
+
+.logo img {
+    width: 72px;
+    height: 75px; 
+}
+
+
+.search-box {
+    display: flex; /* Выравниваем содержимое */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    width: 265px; 
+    height: 12px; 
+    padding: 10px; /* Внутренний отступ */
+    border-radius: 8px; /* Закругление углов  */
+    border: 1px solid #ccc; /* Граница  */
+    background: #D9D9D9; /* Цвет фона  */
+    margin-top: 0px; /* Внешний отступ сверху */
+}
+
+
+.search-box input[type="text"] {
+    flex: 1; 
+    width: 100% - 30px; /* Устанавливает ширину с учетом внутренних отступов */
+    height: 100%; 
+    border: none; /* Убирает границу  */
+    outline: none; /* Убирает стандартное выделение */
+    background: #D9D9D9; 
+    font-family: Montserrat; 
+}
+
+
+.search-box img {
+    padding-right: 10px; /* Внутренний отступ справа от изображения */
+}
+
+.search-box button[type="submit"] {
+    background-color: #99FFB6; 
+    color: black; 
+    border: none; /* Убирает границу */
+    outline: none; /* Убирает стандартное выделение */
+    padding: 8px 20px; /* Внутренние отступы  */
+    border-radius: 0 4px 4px 0; /* Закругление углов  */
+    cursor: pointer; /* Изменение формы указателя при наведении */
+    margin-left: 30px; /* Внешний отступ слева */
+    font-family: Montserrat; 
+    font-weight: 600; /* Насыщенность шрифта */
+}
+
+.cart-button {
+    display: inline-block; /* Отображается как блочный элемент*/
+    margin-left: auto; /* Выравнивание по правому краю */
+}
+
+
+.cart-button img {
+    width: 38px; 
+    height: 30.74px; 
+    vertical-align: middle; /* Выравнивание по центру по вертикали */
+}
+
+
+.polz {
+    background: #D9D9D9; 
+    width: 95px; 
+    height: 53px; 
+    padding: 10px 10px; /* Внутренние отступы кнопки */
+    border: none; /* Убирает границу кнопки */
+    border-radius: 14px; /* Закругление углов кнопки */
+    cursor: pointer; /* Изменение формы указателя при наведении */
+    display: flex; 
+    align-items: center; /* Выравнивание по центру по вертикали */
+    margin-left: 20px; /* Внешний отступ слева */
+}
+
+.textocopm {
+    
+    margin-top: 156px;
+    margin-left: 180px;
+}
+
+.textocopm p{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.ocomp-section {
+    margin-top: 204px;
+    margin-left: 150px;
+    float: left;
+    width: 793px;
+}
+
+.h1text{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.maintext{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display:block;
+    text-align: left;
+    width: 733px;
+    height: 147px;
+    margin-top: -20px;
+}
+
+.ocomp-section p::after {
+    content: '';
+    position: absolute;
+    top: 503px;
+    left: 130px;
+    width: 793px;
+    height: 351px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.50);
+    z-index: -1;
+}
+
+.downlod-section {
+    margin-top: -400px;
+    margin-right: 213px;
+    float: right;
+    position: relative;
+}
+
+.downldtext {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 950px;
+    margin-top: 10px;
+
+}
+
+.iphone {
+    transform: translate(1200px, -30px);
+    width: 25%;
+    height: 25%;
+}
+
+.konecsaita-section {
+    background-color: rgba(217, 217, 217, 0.50) !important;
+    background-image: none;
+    padding: 20px;
+    width: 100%;
+    height: 451px;
+    margin-top: 970px;
+}
+
+.konecsaita {
+    display: flex;
+    align-items: center;
+    padding-left: 350px;
+    margin-top: 170px;
+}
+
+.menu-item {
+    position: relative;
+    width: 253px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.menu-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: width 0.3s ease-out;
+}
+
+.menu-item:hover::before {
+    width: 30%;
+}
+
+.social-item.h1 {
+    width: 320px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.social-item {
+    width: 253px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu-column,
+.social-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item,
+.social-item {
+    line-height: 2;
+}
+
+.logo,
+.menu-column,
+.social-column {
+    padding-right: 100px;
+}
