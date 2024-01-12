@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="support.css"/>
+    <link rel="stylesheet" href="normalize.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="site_header">
+        <div class="glav_contein">
+            <div class="logo">
+                <a href="main.html" class="logo">
+                <img src="img/habtoor 1.png" alt="habtoor">
+                </a>
+            </div>
+            <div class="button1">
+                <button type="submit1">Ваши адреса</button>
+            </div>
+            <div class="search-box">
+                <img src="img/Search.png" width="23px" height="23px">
+                <input type="text" placeholder="Введите запрос">
+                <button type="submit">Найти</button>
+            </div>
+            <button class="cart-button" id="cartButton">
+                <img src="img/Vector.png" alt="Корзина покупок">
+            </button>
+            <div class="cart-container" id="cartContainer"> <!-- Добавлен родительский контейнер -->
+                <div class="rectangle" id="rectangle">
+                    <div class="burger-details" id="burger1">
+                        <p class="burger-name">McDonalds</p>
+                        <img src="img/image 12.png" alt="Бургер с говядиной" class="burger-image">
+                        <p class="burger-price" > 3600 тг</p>
+                        <p class="burger-description">Бургер с говядиной</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity('burger1')">–</button>
+                            <span class="quantity" id="quantity1">1</span>
+                            <button class="quantity-btn" onclick="increaseQuantity('burger1')">+</button>
+                        </div>
+                    </div>
+                    <div class="burger-details" id="burger2">
+                        <p class="burger-name">Okadzaki</p>
+                        <img src="img/image 3.png" alt="Паста Фетучинни" class="burger-image">
+                        <p class="burger-price" > 2500 тг</p>
+                        <p class="burger-description">Паста Фетучинни</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity('burger2')">–</button>
+                            <span class="quantity" id="quantity2">1</span>
+                            <button class="quantity-btn" onclick="increaseQuantity('burger2')">+</button>
+                        </div>
+                    </div>
+                    <div class="doscen">
+                        <p class="dos" style="margin-right: 192px;">Доставка</p>
+                        <p class="cena">0 тг</p>
+                    </div>
+                    <div class="rectangdost">
+                        <img src="img/Saly-3.png" class="rectdosimg">
+                        <p class="recdostxt">В течении 60 - 75 минут</p>
+                    </div>
+                    <div class="rectangoplata">
+                        <div class="oplrad">
+                        <p class="rectoplxt1" style="padding-top: 12px; padding-left: 20px" onclick="openPopup()">Верно, к оплате</p>
+                        <p class="rectoplxt2" style="margin-top: -34px; margin-left: 250px"> 6100 ₸</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="polz" onclick="expandPolz()">
+                <img src="img/Ellipse 2.png" width="45px" height="45px">
+                <img src="img/keyboard_arrow_right.png">
+                <div class="polz-overlay">
+                    <span onclick="navigate('profile')">Профиль</span>
+                    <span onclick="navigate('history')">История заказов</span>
+                    <span onclick="navigate('about')">Избранные Рестораны</span>
+                    <span onclick="navigate('support')">Поддержка</span>
+                </div>
+            </button>
+    </header>
+    <section class="support">
+        <p> Поддержка</p>
+    </section>
+    <section class="messeg-section">
+        <div class="sendmess">
+            <input type="text" placeholder="Отправить сообщение">
+            <img src="img/arrow_back.png" class="arrow">
+        </div>
+        <div class="mess1">
+            <p class="hi">Здравствуйте</p>
+        </div>
+        <div class="mess2">
+            <p class="supp">Здравствуйте, служба <br> поддержки Habtoor</p>
+        </div>
+        <div class="mess31"><div class="mess3"></div> </div>
+        <div class="mess41"><div class="mess4"></div></div>
+        <div class="mess51"><div class="mess5"></div></div>
+    </section>
+    <section class="ques">
+        <div class="ques1">
+            <p>Где мой заказ?</p>
+        </div>
+        <div class="ques2">
+            <p>Отмена заказа</p>
+        </div>
+        <div class="ques3">
+            <p>Доставили не мой заказ</p>
+        </div>
+        <div class="ques4">
+            <p>Не проходит оплата</p>
+        </div>
+        <div class="ques5">
+            <p>Меня не устраивает качество еды</p>
+        </div>
+        <div class="ques6">
+            <p>Другой вопрос</p>
+        </div>
+        <div class="circle"></div>
+    </section>
+    <section class="konecsaita-section">
+        <div class="glav_contain">
+            <div class="konecsaita">
+                <div class="logo">
+                    <img src="img/habtoor 1.png" style="width:124px; height:128px" >
+                </div>
+        
+                <div class="menu-column">
+                    <a href="about.html" class="menu-item">О компании</a>
+                    <a href="kontakt" class="menu-item">Контакты</a>
+                    <a href="oplata" class="menu-item">Оплата и доставка</a>
+                </div>
+        
+                <div class="social-column">
+                    <div class="social-item h1">Мы в социальных сетях</div>
+                    <div class="social-item">Instagram</div>
+                    <div class="social-item">Twitter</div>
+                    <div class="social-item">VK</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="profil.js"></script>
+    <script src="corz.js"></script>
+    <script src="support.js"></script>
+</body>
+</html>
