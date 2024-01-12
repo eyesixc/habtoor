@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="normalize.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="site_header">
+        <div class="glav_contein">
+            <div class="logo">
+                <img src="img/habtoor 1.png" alt="habtoor">
+            </div>
+            <div class="button1">
+                <button type="submit1">Ваши адреса</button>
+            </div>
+            <div class="search-box">
+                <img src="img/Search.png" width="23px" height="23px">
+                <input type="text" placeholder="Введите запрос">
+                <button type="submit">Найти</button>
+            </div>
+            <button class="cart-button" id="cartButton">
+                <img src="img/Vector.png" alt="Корзина покупок">
+            </button>
+            <div class="cart-container" id="cartContainer"> <!-- Добавлен родительский контейнер -->
+                <div class="rectangle" id="rectangle">
+                    <div class="burger-details" id="burger1">
+                        <p class="burger-name">McDonalds</p>
+                        <img src="img/image 12.png" alt="Бургер с говядиной" class="burger-image">
+                        <p class="burger-price" > 3600 тг</p>
+                        <p class="burger-description">Бургер с говядиной</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity('burger1')">–</button>
+                            <span class="quantity" id="quantity1">1</span>
+                            <button class="quantity-btn" onclick="increaseQuantity('burger1')">+</button>
+                        </div>
+                    </div>
+                    <div class="burger-details" id="burger2">
+                        <p class="burger-name">Okadzaki</p>
+                        <img src="img/image 3.png" alt="Паста Фетучинни" class="burger-image">
+                        <p class="burger-price" > 2500 тг</p>
+                        <p class="burger-description">Паста Фетучинни</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity('burger2')">–</button>
+                            <span class="quantity" id="quantity2">1</span>
+                            <button class="quantity-btn" onclick="increaseQuantity('burger2')">+</button>
+                        </div>
+                    </div>
+                    <div class="doscen">
+                        <p class="dos" style="margin-right: 192px;">Доставка</p>
+                        <p class="cena">0 тг</p>
+                    </div>
+                    <div class="rectangdost">
+                        <img src="img/Saly-3.png" class="rectdosimg">
+                        <p class="recdostxt">В течении 60 - 75 минут</p>
+                    </div>
+                    <div class="rectangoplata">
+                        <div class="oplrad">
+                            <div class="rectoplxt1" style="padding-top: 12px; padding-left: 20px" onclick="openPopup()" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'">
+                                <div>Верно, к оплате</div>
+                            </div>
+                        <p class="rectoplxt2" style="margin-top: -19.5px; margin-left: 250px"> 6100 ₸</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="polz" onclick="expandPolz()">
+                <img src="img/Ellipse 2.png" width="45px" height="45px">
+                <img src="img/keyboard_arrow_right.png">
+                <div class="polz-overlay">
+                    <span onclick="navigate('profile')">Профиль</span>
+                    <span onclick="navigate('history')">История заказов</span>
+                    <span onclick="navigate('about')">Избранные Рестораны</span>
+                    <span onclick="navigate('support')">Поддержка</span>
+                </div>
+            </button>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <div class="popuprect1">
+            <div class="adreccrect">
+                <p class="addresrecttxt">Адрес доставки</p>
+                <div class="rectandress">
+                    <p>проспект Туран 46</p>
+                </div>
+            </div>
+            <div class="vasheimyarect">
+                <p>Ваше имя</p>
+                <input type="text" placeholder="Введите Ваше имя" style="width: 223px; height: 28px; border-radius: 50px; border: 1px solid #000; background: rgba(255, 255, 255, 0.00); padding-left: 10px;">
+            </div>
+            <div class="vashnomerrect">
+                <p>Ваш номер телефона</p>
+                <input type="text" placeholder="Введите Ваш номер телефона" style="width: 240px; height: 34px; border-radius: 50px; border: 1px solid #000; background: rgba(255, 255, 255, 0.00); padding-left: 10px;">
+            </div>
+            <div class="commentrrect">
+                <p>Комметарий к заказу</p>
+                <input type="text" placeholder="" class="commentplacehol" style="width: 272px; height: 77px; border-radius: 4px; border: 1px solid #000; background: rgba(255, 255, 255, 0.00);">
+            </div>
+        </div>
+        <div class="oformotzakaz">
+            <p class="predzakazof">Оформить предзаказ</p>
+            <p class="dataivrem">Дата и время</p>
+            <input type="date" style="width: 234px; height: 34px; border-radius: 4px; border: 1px solid #D9D9D9; background: rgba(217, 217, 217, 0.00); margin-left:10px; text-align:center; 
+            color: #000;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 30px */" >
+            <input type="time" placeholder="" style="width: 115px; height: 34px; border-radius: 4px; border: 1px solid #D9D9D9; background: rgba(217, 217, 217, 0.00); margin-left:10px; text-align:center;">
+        </div>
+        <div class="oplatarect">
+            <p class="oplatatxt">Оплата</p>
+            <div class="nalichkarect">
+                <p class="naltxt">Наличными</p>
+            </div>
+            <div class="perevodrect">
+                <p class="perevodtxt">Перевод на карту</p>
+            </div>
+            <div class="kartoyrect">
+                <p class="kartoytxt">Картой при получении</p>
+            </div>
+        </div>
+        <div class="visarect">
+            <img src="img/431.png">
+            <p>...2795</p>
+        </div>
+        <div class="oplatatengrect">
+            <p class="oplatatxt">Оплатить</p>
+            <p class="cenattxt">6100 ₸ </p>
+        </div>
+        <div  onclick="closePopup()" class="crest"></div>
+    </div>
+    </header>
+    <section class="navig">
+        <div class="glav_contain">
+            <figure class="figure">
+            <img
+            src="img/textalignjustifycenter.png" width="40px" height="48px">
+            <figcaption>
+                <a class="link" href="#recomend" style="padding-right:50px">Рекомендации</a>
+            </figcaption>
+            <img
+            src="img/icons8-cutlery-100 (1) 1.png" width="29px" height="37px">
+            <figcaption>
+                <a class="link" href="#allrest">Рестораны</a>
+            </figcaption>
+            </figure>
+        </div>
+    </section>
+    <section class="dish-section" id="recomend">
+        <div class="glav_contain">
+            <div class="figure1">
+            <div class="dish-item">
+                <img src="img/image 1.png" alt="Dish 1">
+                <div class="dish-info">
+                    <p>
+                        <span class="nazvanres" >Papa lepit</span>
+                        <span class="gold-star">&#9733;</span>
+                        <span class="ocenka" style="padding-right:70px">4,5</span>
+                        <span class="heart-icon">&#10084;</span>
+                    </p>
+                </div>
+            </div>
+            <div class="dish-item">
+                <img src="img/image 1 (1).png" alt="Dish 1">
+                <div class="dish-info">
+                    <p>
+                        <span class="nazvanres">Papa lepit</span>
+                        <span class="gold-star">&#9733;</span>
+                        <span class="ocenka" style="padding-right:70px">4,5</span>
+                        <span class="heart-icon">&#10084;</span>
+                    </p>
+                </div>
+            </div>
+            <div class="dish-item">
+                <img src="img/image 1 (2).png" alt="Dish 1">
+                <div class="dish-info">
+                    <p>
+                        <span class="nazvanres">SAF</span>
+                        <span class="gold-star">&#9733;</span>
+                        <span class="ocenka" style="padding-right:150px">4,6</span>
+                        <span class="heart-icon">&#10084;</span>
+                    </p>
+                </div>
+            </div>
+            <div class="dish-item">
+                <img src="img/image 1 (3).png" alt="Dish 1">
+                <div class="dish-info">
+                    <p>
+                        <span class="nazvanres">Zamtri</span>
+                        <span class="gold-star">&#9733;</span>
+                        <span class="ocenka" style="padding-right:70px">4,6</span>
+                        <span class="heart-icon">&#10084;</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="foodcomp">
+        <div class="glav_contein">
+            <p class="company-title">Еда для вечерней компании</p>
+        </section>
+        <section class="foodpresent">
+            <div class="glav_contain">
+                <div class="foodpresent1"> 
+                    <div class="food-item">
+                        <img src="img/image 1-1.png">
+                        <div class="item-info">
+                            <p>
+                                <span class="nazvanres"> KFC</span>
+                                <span class="gold-star">&#9733;</span> 
+                                <span class="ocenka" style="padding-right:370px">4,9</span>
+                                <span class="heart-icon">&#10084;</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="food-item">
+                        <img src="img/image 1-2.png">
+                        <div class="item-info">
+                            <p>
+                                <span class="nazvanres"> Burger King</span>
+                                <span class="gold-star">&#9733;</span>
+                                <span class="ocenka" style="padding-right:240px">4,6</span>
+                                <span class="heart-icon">&#10084;</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="food-item">
+                        <img src="img/2233.png">
+                        <div class="item-info">
+                            <p>
+                                <span class="nazvanres"> Mc Donalds</span>
+                                <span class="gold-star">&#9733;</span> 
+                                <span class="ocenka" style="padding-right:240px">4,6</span>
+                                <span class="heart-icon">&#10084;</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="food-item">
+                        <img src="img/image 1-3.png" >
+                        <div class="item-info">
+                            <p>
+                                <span class="nazvanres"> Okadzaki</span>
+                                <span class="gold-star">&#9733;</span>
+                                <span class="ocenka" style="padding-right:295px">5</span>
+                                <span class="heart-icon">&#10084;</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dostavka">
+            <div class="glavcontain">
+                <p class="dostavkatext"><img src="img/Saly-3.png" width="125px" height="125px"><span class="delivery-text">Бесплатная доставка от 7000 ₸</span></p>
+            </div>
+        </section>
+        <section class="dostavka-section">
+            <div class="glav_contain">
+                <div class="figure2">
+                <div class="dostavka-item">
+                    <img src="img/image 11 (1).png" alt="Dish 1">
+                    <div class="dostavka-info">
+                        <p>
+                            <span class="nazvanres" >Coffee boom</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:70px">4,6</span>
+                            <span class="heart-icon">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="dostavka-item">
+                    <img src="img/image 11 (2).png" alt="Dish 1">
+                    <div class="dostavka-info">
+                        <p>
+                            <span class="nazvanres">Farш</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:70px">4,9</span>
+                            <span class="heart-icon" style="padding-left:100px">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="dostavka-item">
+                    <img src="img/image 11 (3).png" alt="Dish 1">
+                    <div class="dostavka-info">
+                        <p>
+                            <span class="nazvanres">Узбечка</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:40px">4,6</span>
+                            <span class="heart-icon" style="padding-left:80px">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="dostavka-item">
+                    <img src="img/image 11 (4).png" alt="Dish 1">
+                    <div class="dostavka-info">
+                        <p>
+                            <span class="nazvanres">Шарью</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:80px">4</span>
+                            <span class="heart-icon" style="padding-left:70px">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="scidka">
+            <div class="glav_contein">
+                <p class="scidka-title">До -20% на вкусные комбо</p>
+            </div>
+        </section>
+        <section class="scidka-section">
+            <div class="glav_contain">
+                <div class="figure2">
+                <div class="scidka-item">
+                    <img src="img/image 123 (1).png" alt="Dish 1">
+                    <div class="scidka-info">
+                        <p>
+                            <span class="nazvanres" >Коктем</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:60px">4,6</span>
+                            <span class="heart-icon" style="padding-left:70px">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="scidka-item">
+                    <img src="img/image 123 (2).png" alt="Dish 1">
+                    <div class="scidka-info">
+                        <p>
+                            <span class="nazvanres">Дом</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:70px">4,9</span>
+                            <span class="heart-icon" style="padding-left:100px">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="scidka-item">
+                    <img src="img/image 123 (3).png" alt="Dish 1">
+                    <div class="scidka-info">
+                        <p>
+                            <span class="nazvanres">NAVAT</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:40px">4,6</span>
+                            <span class="heart-icon" style="padding-left:80px">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="scidka-item">
+                    <img src="img/image 123 (4).png" alt="Dish 1">
+                    <div class="scidka-info">
+                        <p>
+                            <span class="nazvanres">Okadzaki</span>
+                            <span class="gold-star">&#9733;</span>
+                            <span class="ocenka" style="padding-right:70px">5</span>
+                            <span class="heart-icon" style="padding-left:60px">&#10084;</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="allrest" id="allrest">
+            <div class="glav_contein">
+                <p class="allrest-title">Все рестораны</p>
+            </div>
+        </section>
+        <section class="allrest-section">
+            <div class="glav_contein">
+                <div class="allrest1">
+                    <div class="allrest-row">
+                        <div class="allrest-item">
+                            <img src="img/image 333 (1).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Sazan</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="allrest-item">
+                            <img src="img/image 333 (2).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Toi Dami</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="allrest-item">
+                            <img src="img/image 333 (3).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Sok Burger</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="allrest-row">
+                        <div class="allrest-item">
+                            <img src="img/image 333 (4).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Fort Vernja</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="allrest-item">
+                            <img src="img/image 333 (5).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Doner AI</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="allrest-item">
+                            <img src="img/image 333 (6).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Foodzilla</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="allrest-row">
+                        <div class="allrest-item">
+                            <img src="img/image 333 (7).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Тануки</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="allrest-item">
+                            <img src="img/image 333 (8).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Starbucks</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="allrest-item">
+                            <img src="img/image 333 (9).png">
+                            <div class="allrest-info">
+                                <p>
+                                    <span class="nazvanres">Трдельник</span>
+                                    <span class="gold-star">&#9733;</span>
+                                    <span class="ocenka">4,5</span>
+                                </p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="konecsaita-section">
+            <div class="glav_contain">
+                <div class="konecsaita">
+                    <div class="logo">
+                        <img src="img/habtoor 1.png" style="width:124px; height:128px" >
+                    </div>
+            
+                    <div class="menu-column">
+                        <a href="about.html" class="menu-item">О компании</a>
+                        <a href="kontakt" class="menu-item">Контакты</a>
+                        <a href="oplata" class="menu-item">Оплата и доставка</a>
+                    </div>
+            
+                    <div class="social-column">
+                        <div class="social-item h1">Мы в социальных сетях</div>
+                        <div class="social-item">Instagram</div>
+                        <div class="social-item">Twitter</div>
+                        <div class="social-item">VK</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="profil.js"></script>
+        <script src="corz.js"></script>
+</body>
+</html>
