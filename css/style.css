@@ -897,7 +897,8 @@ line-height: normal;
 }
 
 .foodcomp {
-    margin-top: 60px;
+    margin-top: 20px;
+    margin-left: -400px;
 }
 
 .foodcomp p{
@@ -938,10 +939,11 @@ line-height: normal;
 }
 
 
-.foodpresent1 {
+
+.food-row{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .item-info {
@@ -1008,7 +1010,7 @@ line-height: normal;
 .dostavka p::after {
     content: '';
     position: absolute;
-    top: 1495px;
+    top: 1534px;
     left: -250px;
     width: 1000px;
     height: 70px;
@@ -1028,6 +1030,7 @@ line-height: normal;
 
 .dostavka-section {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .figure2 {
@@ -1125,12 +1128,13 @@ line-height: normal;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-left: -210px;
 }
 
 .scidka p::after {
     content: '';
     position: absolute;
-    top: 1865px;
+    top: 1920px;
     left: -250px;
     width: 864px;
     height: 56.2px;
